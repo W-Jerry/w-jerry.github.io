@@ -1,15 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
@@ -74,19 +75,19 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Flask," />
-
-
-
+  <meta name="keywords" content="Flask,Python," />
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
 
 
 
@@ -94,13 +95,13 @@
 
 
 <meta name="description" content="Flask简介Flask是一个使用 Python编写的轻量级 Web 应用框架。在大多数标准中，Flask都算是小型框架，小到可以称为“微框架”。 Flask 有两个主要依赖：路由、调试和Web 服务器网关接口WSGI子系统由Werkzeug提供；模板系统由Jinja2提供。 ####flask的安装 1pip install flask 现在flask的最新版本是0.12.2 flask的初始化">
-<meta name="keywords" content="Flask">
+<meta name="keywords" content="Flask,Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flask简介">
-<meta property="og:url" content="http://yoursite.com/2017/08/19/Flask简介/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/08/19/2017-08-19-Flask简介/index.html">
 <meta property="og:site_name" content="Jerry&#39;s Blog">
 <meta property="og:description" content="Flask简介Flask是一个使用 Python编写的轻量级 Web 应用框架。在大多数标准中，Flask都算是小型框架，小到可以称为“微框架”。 Flask 有两个主要依赖：路由、调试和Web 服务器网关接口WSGI子系统由Werkzeug提供；模板系统由Jinja2提供。 ####flask的安装 1pip install flask 现在flask的最新版本是0.12.2 flask的初始化">
-<meta property="og:updated_time" content="2017-08-19T14:11:10.354Z">
+<meta property="og:updated_time" content="2017-08-20T07:25:33.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flask简介">
 <meta name="twitter:description" content="Flask简介Flask是一个使用 Python编写的轻量级 Web 应用框架。在大多数标准中，Flask都算是小型框架，小到可以称为“微框架”。 Flask 有两个主要依赖：路由、调试和Web 服务器网关接口WSGI子系统由Werkzeug提供；模板系统由Jinja2提供。 ####flask的安装 1pip install flask 现在flask的最新版本是0.12.2 flask的初始化">
@@ -111,9 +112,10 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
+    tabs: true,
     motion: true,
     duoshuo: {
       userId: '0',
@@ -131,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/19/Flask简介/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/19/2017-08-19-Flask简介/"/>
 
 
 
@@ -139,12 +141,6 @@
 
   <title>Flask简介 | Jerry's Blog</title>
   
-
-
-
-
-
-
 
 
 
@@ -178,7 +174,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">Welcome</p>
+        <p class="site-subtitle">天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。</p>
       
   </div>
 
@@ -227,6 +223,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
 
       
     </ul>
@@ -255,8 +261,12 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/Flask简介/">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/2017-08-19-Flask简介/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jerry Wang">
@@ -314,6 +324,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -329,6 +342,7 @@
 <h4 id="路由和视图函数"><a href="#路由和视图函数" class="headerlink" title="路由和视图函数"></a>路由和视图函数</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@app.route('/')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></div><div class="line">	<span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello World!&lt;/h1&gt;'</span></div><div class="line"></div><div class="line"><span class="meta">@app.route('/user/&lt;name&gt;')</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">user</span><span class="params">(name)</span>:</span></div><div class="line">	<span class="keyword">return</span> <span class="string">'&lt;h1&gt;Hello, %s!&lt;/h1&gt;'</span> % name</div></pre></td></tr></table></figure>
 <h4 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    app.run(debug=<span class="keyword">True</span>)</div></pre></td></tr></table></figure>
 <p><code>debug=True</code>在开发过程中启用调试模式会带来一些便利，比如说自动重载程序。</p>
+<a id="more"></a>
 <h4 id="flask的模板"><a href="#flask的模板" class="headerlink" title="flask的模板"></a>flask的模板</h4><p>模板是一个包含响应文本的文件，其中包含用占位变量表示的动态部分，其具体值只在请<br>求的上下文中才能知道。使用真实值替换变量，再返回最终得到的响应字符串，这一过程<br>称为渲染。为了渲染模板，Flask 使用了一个名为<strong>Jinja2</strong> 的强大模板引擎。</p>
 <p>默认情况下，Flask 在程序文件夹中的templates 子文件夹中寻找模板。</p>
 <p>Flask 提供的render_template 函数把Jinja2 模板引擎集成到了程序中。</p>
@@ -354,33 +368,23 @@
 
       
     </div>
+    
+    
+    
 
-    <div>
-      
-        
+    
 
-      
-    </div>
+    
 
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
+    
 
     <footer class="post-footer">
       
         <div class="post-tags">
           
             <a href="/tags/Flask/" rel="tag"># Flask</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
           
         </div>
       
@@ -393,7 +397,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/15/Powershell的match的技巧/" rel="next" title="Powershell的match的技巧">
+              <a href="/2017/08/15/2017-08-15-Powershell的match的技巧/" rel="next" title="Powershell的match的技巧">
                 <i class="fa fa-chevron-left"></i> Powershell的match的技巧
               </a>
             
@@ -410,6 +414,10 @@
       
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -443,6 +451,7 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
@@ -485,10 +494,10 @@
             
             
             <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">3</span>
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
@@ -549,22 +558,32 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Jerry Wang</span>
+
+  
 </div>
 
 
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
+  <div class="powered-by">
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+  </div>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">
+    主题 &mdash;
+    <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+      NexT.Gemini
+    </a>
+  </div>
 
 
         
+
+
+
+
+
+
 
         
       </div>
@@ -630,25 +649,32 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
 
 
 
   
+  
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
 
 
 
@@ -675,10 +701,6 @@
   
 
 
-
-
-
-  
 
 
 
