@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Powershell," />
+  <meta name="keywords" content="PowerShell," />
 
 
 
@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="PowerShell’s -match和-like的区别-match只要匹配到字符串就可以了，但是-like一定需要全匹配，或者使用通配符进行全匹配，在windows下面大小写并不敏感。 123456789λ  $Person =&quot;Guy Thomas 1949&quot;λ  $Person -match &quot;th*&quot;Trueλ  $Person -like &quot;th*&quot;Falseλ  $Person -li">
-<meta name="keywords" content="Powershell">
+<meta name="description" content="PowerShell介绍这里偷懒一下，可以通过PowerShell Wiki来了解PowerShell。 如何查看PowerShell版本123456789101112$PSVersionTableName                           Value----                           -----PSVersion">
+<meta name="keywords" content="PowerShell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Powershell的match的技巧">
-<meta property="og:url" content="http://yoursite.com/2017/08/15/2017-08-15-Powershell的match的技巧/index.html">
+<meta property="og:title" content="PowerShell学习1">
+<meta property="og:url" content="http://yoursite.com/2017/08/21/PowerShell学习1/index.html">
 <meta property="og:site_name" content="Jerry&#39;s Blog">
-<meta property="og:description" content="PowerShell’s -match和-like的区别-match只要匹配到字符串就可以了，但是-like一定需要全匹配，或者使用通配符进行全匹配，在windows下面大小写并不敏感。 123456789λ  $Person =&quot;Guy Thomas 1949&quot;λ  $Person -match &quot;th*&quot;Trueλ  $Person -like &quot;th*&quot;Falseλ  $Person -li">
-<meta property="og:updated_time" content="2017-08-15T15:31:18.293Z">
+<meta property="og:description" content="PowerShell介绍这里偷懒一下，可以通过PowerShell Wiki来了解PowerShell。 如何查看PowerShell版本123456789101112$PSVersionTableName                           Value----                           -----PSVersion">
+<meta property="og:updated_time" content="2017-08-21T15:05:39.232Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Powershell的match的技巧">
-<meta name="twitter:description" content="PowerShell’s -match和-like的区别-match只要匹配到字符串就可以了，但是-like一定需要全匹配，或者使用通配符进行全匹配，在windows下面大小写并不敏感。 123456789λ  $Person =&quot;Guy Thomas 1949&quot;λ  $Person -match &quot;th*&quot;Trueλ  $Person -like &quot;th*&quot;Falseλ  $Person -li">
+<meta name="twitter:title" content="PowerShell学习1">
+<meta name="twitter:description" content="PowerShell介绍这里偷懒一下，可以通过PowerShell Wiki来了解PowerShell。 如何查看PowerShell版本123456789101112$PSVersionTableName                           Value----                           -----PSVersion">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/15/2017-08-15-Powershell的match的技巧/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/21/PowerShell学习1/"/>
 
 
 
 
 
-  <title>Powershell的match的技巧 | Jerry's Blog</title>
+  <title>PowerShell学习1 | Jerry's Blog</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/2017-08-15-Powershell的match的技巧/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/21/PowerShell学习1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jerry Wang">
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Powershell的match的技巧</h1>
+          <h1 class="post-title" itemprop="name headline">PowerShell学习1</h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-15T22:57:14+08:00">
-                2017-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T20:09:55+08:00">
+                2017-08-21
               </time>
             
 
@@ -333,11 +333,26 @@
       
 
       
-        <h2 id="PowerShell’s-match和-like的区别"><a href="#PowerShell’s-match和-like的区别" class="headerlink" title="PowerShell’s -match和-like的区别"></a>PowerShell’s -match和-like的区别</h2><p>-match只要匹配到字符串就可以了，但是-like一定需要全匹配，或者使用通配符进行全匹配，在windows下面大小写并不敏感。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">λ  <span class="variable">$Person</span> =<span class="string">"Guy Thomas 1949"</span></div><div class="line">λ  <span class="variable">$Person</span> <span class="nomarkup">-match</span> <span class="string">"th*"</span></div><div class="line">True</div><div class="line">λ  <span class="variable">$Person</span> <span class="nomarkup">-like</span> <span class="string">"th*"</span></div><div class="line">False</div><div class="line">λ  <span class="variable">$Person</span> <span class="nomarkup">-like</span> <span class="string">"*th*"</span></div><div class="line">True</div><div class="line">C:\Users\fei</div><div class="line">λ</div></pre></td></tr></table></figure>
-<h2 id="Matches变量的使用"><a href="#Matches变量的使用" class="headerlink" title="$Matches变量的使用"></a>$Matches变量的使用</h2><p>先看这个列子</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">λ  <span class="variable">$string</span> = <span class="string">"abc123abc"</span></div><div class="line">λ  <span class="variable">$pattern</span> = <span class="string">"(\d&#123;3&#125;)"</span></div><div class="line">λ  <span class="variable">$string</span> <span class="nomarkup">-match</span> <span class="variable">$pattern</span></div><div class="line">True</div><div class="line">λ  <span class="variable">$Matches</span></div><div class="line"></div><div class="line">Name                           Value</div><div class="line">----                           -----</div><div class="line"><span class="number">1</span>                              <span class="number">123</span></div><div class="line"><span class="number">0</span>                              <span class="number">123</span></div><div class="line"></div><div class="line">λ  <span class="variable">$pattern2</span> = <span class="string">"abc(\d&#123;3&#125;)"</span></div><div class="line">λ  <span class="variable">$string</span> <span class="nomarkup">-match</span> <span class="variable">$pattern2</span></div><div class="line">True</div><div class="line">λ  <span class="variable">$Matches</span></div><div class="line"></div><div class="line">Name                           Value</div><div class="line">----                           -----</div><div class="line"><span class="number">1</span>                              <span class="number">123</span></div><div class="line"><span class="number">0</span>                              abc123</div></pre></td></tr></table></figure>
-<p><code>$Matches[0]</code>表示的是与正则表达式相匹配的内容，而<code>$Matches[1]</code>则对应着第一个小括号内的内容，我们这个例子只有一个小括号，如果有多个，就可以匹配多个<code>$Matches</code>的元素</p>
+        <h2 id="PowerShell介绍"><a href="#PowerShell介绍" class="headerlink" title="PowerShell介绍"></a>PowerShell介绍</h2><p>这里偷懒一下，可以通过<a href="https://en.wikipedia.org/wiki/PowerShell" target="_blank" rel="external">PowerShell Wiki</a>来了解PowerShell。</p>
+<h3 id="如何查看PowerShell版本"><a href="#如何查看PowerShell版本" class="headerlink" title="如何查看PowerShell版本"></a>如何查看PowerShell版本</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$PSVersionTable</span></div><div class="line"></div><div class="line">Name                           Value</div><div class="line">----                           -----</div><div class="line">PSVersion                      <span class="number">5.1</span>.<span class="number">14393.1532</span></div><div class="line">PSEdition                      Desktop</div><div class="line">PSCompatibleVersions           &#123;<span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>...&#125;</div><div class="line">BuildVersion                   <span class="number">10.0</span>.<span class="number">14393.1532</span></div><div class="line">CLRVersion                     <span class="number">4.0</span>.<span class="number">30319.42000</span></div><div class="line">WSManStackVersion              <span class="number">3.0</span></div><div class="line">PSRemotingProtocolVersion      <span class="number">2.3</span></div><div class="line">SerializationVersion           <span class="number">1.1</span>.<span class="number">0.1</span></div></pre></td></tr></table></figure>
+<p>后面的学习至少需要3.0的版本，如果不是，请先升级到3.0。</p>
+<a id="more"></a>
+<h3 id="PowerShell编辑器"><a href="#PowerShell编辑器" class="headerlink" title="PowerShell编辑器"></a>PowerShell编辑器</h3><p>现在有什么理由不使用<code>Visual Studio Code</code>，现在最新版本1.15.1。</p>
+<h3 id="好用的帮助系统"><a href="#好用的帮助系统" class="headerlink" title="好用的帮助系统"></a>好用的帮助系统</h3><p>PowerShell包含了很多不同类型的可执行命令，其中主要的三种分别是：<code>alias</code>，<code>function</code>，<code>cmdlet</code>。</p>
+<p>PowerShell提供了在线更新命令的功能<code>update-help</code>，我们应该养成定期更新的习惯。</p>
+<p>我们可以使用<code>man</code>,<code>help</code>,<code>get-help</code>来获得帮助文档，这里为什么会有<code>man</code> ，有Linux和Unix经验的人应该不会陌生。</p>
+<p>我们深入了解一下会发现，其实这3个命令是有本质的区别的，顺便让我们来看一下这个函数到底是什么。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">λ  <span class="built_in">Get-Command</span> help		<span class="comment">#是个函数</span></div><div class="line"></div><div class="line">CommandType     Name                                               Version    Source</div><div class="line">-----------     ----                                               -------    ------</div><div class="line"><span class="keyword">Function</span>        help</div><div class="line"></div><div class="line"></div><div class="line">λ  gcm man		<span class="comment">#是个别名</span></div><div class="line"></div><div class="line">CommandType     Name                                               Version    Source</div><div class="line">-----------     ----                                               -------    ------</div><div class="line">Alias           man -&gt; help</div><div class="line"></div><div class="line"></div><div class="line">λ  gcm <span class="built_in">Get-Help</span>		<span class="comment">#是个Cmdlet</span></div><div class="line"></div><div class="line">CommandType     Name                                               Version    Source</div><div class="line">-----------     ----                                               -------    ------</div><div class="line">Cmdlet          <span class="built_in">Get-Help</span>                                           <span class="number">3.0</span>.<span class="number">0.0</span>    Microsoft.PowerShell.Core</div><div class="line"></div><div class="line">λ  $&#123;<span class="keyword">Function</span>:help&#125;		<span class="comment">#查看这个函数的具体内容</span></div><div class="line"></div><div class="line"><span class="comment">&lt;#</span></div><div class="line"><span class="doctag">.FORWARDHELPTARGETNAME Get-Help</span></div><div class="line"><span class="doctag">.FORWARDHELPCATEGORY Cmdlet</span></div><div class="line">#&gt;</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>通配符号*提供了了强大的匹配能力</p>
+<figure class="highlight plain"><figcaption><span>*log*</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">help *log*</div><div class="line">help *event*</div><div class="line">get-command -Noun *log*</div><div class="line">get-command -Verb get</div></pre></td></tr></table></figure>
+<p>如何你仔细查看命令的帮助文件，你会看到每一个命令参数的结尾都有<code>[&lt;CommonParameters&gt;]</code>这里泛指每个Cmdlet命令都可以使用一组包含8个参数(PowerShell 5.1)的集合。可以通过命令<code>help about_CommonParameters</code></p>
+<p>查看帮助。</p>
+<p>小技巧</p>
+<p><code>show command cmdlet</code>可以使用图形化的方式将命令的参数展现出来。</p>
+<h3 id="PowerShell的扩展"><a href="#PowerShell的扩展" class="headerlink" title="PowerShell的扩展"></a>PowerShell的扩展</h3><p>PowerShell存在两种类型的扩展：module和PSSnapin。</p>
+<p>PSSnapin基本已经被抛弃了，现在主要使用的都是module。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$env:PSModulePath</span>		<span class="comment">#查看模块的位置</span></div></pre></td></tr></table></figure>
+<p>你会发现即使你没有使用<code>import-module</code>去加载模块，PowerShell依然可以自动发现模块中的命令。但是如果一个模块并不在<code>PSModulePath</code>环境变量中的话，就必须使用<code>import-module</code></p>
 
       
     </div>
@@ -355,7 +370,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Powershell/" rel="tag"># Powershell</a>
+            <a href="/tags/PowerShell/" rel="tag"># PowerShell</a>
           
         </div>
       
@@ -368,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/03/Hexo安装的坑/" rel="next" title="hexo安装的坑">
-                <i class="fa fa-chevron-left"></i> hexo安装的坑
+              <a href="/2017/08/20/Flask-Web表单/" rel="next" title="Flask Web表单">
+                <i class="fa fa-chevron-left"></i> Flask Web表单
               </a>
             
           </div>
@@ -377,10 +392,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/19/2017-08-19-Flask简介/" rel="prev" title="Flask简介">
-                Flask简介 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -505,7 +516,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell’s-match和-like的区别"><span class="nav-number">1.</span> <span class="nav-text">PowerShell’s -match和-like的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matches变量的使用"><span class="nav-number">2.</span> <span class="nav-text">$Matches变量的使用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell介绍"><span class="nav-number">1.</span> <span class="nav-text">PowerShell介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何查看PowerShell版本"><span class="nav-number">1.1.</span> <span class="nav-text">如何查看PowerShell版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PowerShell编辑器"><span class="nav-number">1.2.</span> <span class="nav-text">PowerShell编辑器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#好用的帮助系统"><span class="nav-number">1.3.</span> <span class="nav-text">好用的帮助系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PowerShell的扩展"><span class="nav-number">1.4.</span> <span class="nav-text">PowerShell的扩展</span></a></li></ol></li></ol></div>
             
 
           </div>
