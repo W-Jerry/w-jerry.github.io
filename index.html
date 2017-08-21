@@ -174,7 +174,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。</p>
+        <p class="site-subtitle">Welcome</p>
       
   </div>
 
@@ -729,6 +729,7 @@
 <h2 id="报错：DEP0061"><a href="#报错：DEP0061" class="headerlink" title="报错：DEP0061"></a>报错：DEP0061</h2><p>node.js从8.0开始就已经弃用fs.SyncWriteStream方法，然而作者项目里的一个叫<code>hexo-fs</code>的插件，调用了这个方法，就会报错，解决办法，作者没有提供，但是很显然，我只需要更新一下那个插件，就可以搞定，于是更新的方法是，在Hexo博客目录下，输入</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-fs --save</div></pre></td></tr></table></figure>
 <p>另一个办法就是安装8.0以下的版本。</p>
+<p>这个issue(#2643)似乎在hexo3.3.8中被修复。</p>
 <h2 id="报错：error-deploy-not-found-git"><a href="#报错：error-deploy-not-found-git" class="headerlink" title="报错：error deploy not found: git"></a>报错：error deploy not found: git</h2><p>需要安装hexo-deployer-git</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
 
