@@ -266,6 +266,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/27/PowerShell学习2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jerry Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jerry's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/27/PowerShell学习2/" itemprop="url">PowerShell学习2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-27T14:25:00+08:00">
+                2017-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h2><p>PowerShell的管道也是通过|来实现的，最基本的命令格式<code>commandA | commandB</code>,将<code>commandA</code>的输出结果当做<code>commandB</code>的输入。</p>
+<p>简单的列子：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Get-Process</span> | sort VM -Descending | <span class="built_in">ConvertTo-Html</span> | <span class="built_in">Out-File</span> process.html</div></pre></td></tr></table></figure>
+<p>那么到底PowerShell是根据让管道后面的命令来接受前面命令的结果呢。这里他会尝试2中方式，第一种是<strong>By Vaule</strong>,如果这种方式行不通的话，就尝试第二种方式<strong>ByPropertyName</strong>. 这里你可以通过help -full来查看命令的详细帮助来了解，这里就不展开了。</p>
+<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>PowerShell并不是完全成熟的用于生成管理报表的工具，虽然他的确能很好的收集计算机的信息，并且以定制的格式输出，用于输出定制格式的方式叫做格式化。</p>
+<p>在PowerShell中，有4中格式化的命令，常用的3中如下。</p>
+<p>1.<code>Format-Table</code>,其别名是<code>ft</code>. 他常用的参数有下面几个<code>-autosize</code>,<code>-property</code>,<code>-groupby</code>,<code>wrap</code></p>
+<p>2.<code>Format-List</code>,其别名是<code>fl</code></p>
+<p>3.<code>Format-Wide</code>,其别名是<code>fw</code>, 较少使用。</p>
+<p>在展示的时候，我们可以自定义一个哈希表来创建自定义的列。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Get-Process</span> | ft name,@&#123;n=<span class="string">'VM(MB)'</span>; e=&#123;<span class="variable">$_</span>.vm/<span class="number">1</span>mb -as [int]&#125;&#125; -AutoSize</div></pre></td></tr></table></figure>
+<p>我们这里也可以使用select-object的方式来实现</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Get-Process</span> | <span class="built_in">Select-Object</span> name,@&#123;n=<span class="string">'VM(MB)'</span>; e=&#123;<span class="variable">$_</span>.vm/<span class="number">1</span>mb -as [int]&#125;&#125;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/27/PowerShell学习2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/21/PowerShell学习1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -939,7 +1075,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -952,7 +1088,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
