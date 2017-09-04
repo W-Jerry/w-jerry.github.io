@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PowerShell," />
+  <meta name="keywords" content="VMware," />
 
 
 
@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="PowerShell’s -match和-like的区别-match只要匹配到字符串就可以了，但是-like一定需要全匹配，或者使用通配符进行全匹配，在windows下面大小写并不敏感。 123456789λ  $Person =&quot;Guy Thomas 1949&quot;λ  $Person -match &quot;th*&quot;Trueλ  $Person -like &quot;th*&quot;Falseλ  $Person -li">
-<meta name="keywords" content="PowerShell">
+<meta name="description" content="##Location of VMware vCenter Server 6.0 log files (2110014) The VMware vCenter Server 6.0 logs are located in the %ALLUSERSPROFILE%\VMWare\vCenterServer\logs folder. The VMware vCenter Server Applianc">
+<meta name="keywords" content="VMware">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Powershell的match的技巧">
-<meta property="og:url" content="http://yoursite.com/2017/08/15/2017-08-15-Powershell的match的技巧/index.html">
+<meta property="og:title" content="Location of VMware vCenter Server 6.0 log files">
+<meta property="og:url" content="http://yoursite.com/2017/09/04/Location-of-vCenter6.0-log-files/index.html">
 <meta property="og:site_name" content="Jerry&#39;s Blog">
-<meta property="og:description" content="PowerShell’s -match和-like的区别-match只要匹配到字符串就可以了，但是-like一定需要全匹配，或者使用通配符进行全匹配，在windows下面大小写并不敏感。 123456789λ  $Person =&quot;Guy Thomas 1949&quot;λ  $Person -match &quot;th*&quot;Trueλ  $Person -like &quot;th*&quot;Falseλ  $Person -li">
-<meta property="og:updated_time" content="2017-08-27T08:09:51.893Z">
+<meta property="og:description" content="##Location of VMware vCenter Server 6.0 log files (2110014) The VMware vCenter Server 6.0 logs are located in the %ALLUSERSPROFILE%\VMWare\vCenterServer\logs folder. The VMware vCenter Server Applianc">
+<meta property="og:updated_time" content="2017-09-04T12:30:30.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Powershell的match的技巧">
-<meta name="twitter:description" content="PowerShell’s -match和-like的区别-match只要匹配到字符串就可以了，但是-like一定需要全匹配，或者使用通配符进行全匹配，在windows下面大小写并不敏感。 123456789λ  $Person =&quot;Guy Thomas 1949&quot;λ  $Person -match &quot;th*&quot;Trueλ  $Person -like &quot;th*&quot;Falseλ  $Person -li">
+<meta name="twitter:title" content="Location of VMware vCenter Server 6.0 log files">
+<meta name="twitter:description" content="##Location of VMware vCenter Server 6.0 log files (2110014) The VMware vCenter Server 6.0 logs are located in the %ALLUSERSPROFILE%\VMWare\vCenterServer\logs folder. The VMware vCenter Server Applianc">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/15/2017-08-15-Powershell的match的技巧/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/04/Location-of-vCenter6.0-log-files/"/>
 
 
 
 
 
-  <title>Powershell的match的技巧 | Jerry's Blog</title>
+  <title>Location of VMware vCenter Server 6.0 log files | Jerry's Blog</title>
   
 
 
@@ -266,7 +266,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/2017-08-15-Powershell的match的技巧/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/04/Location-of-vCenter6.0-log-files/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jerry Wang">
@@ -283,7 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Powershell的match的技巧</h1>
+          <h1 class="post-title" itemprop="name headline">Location of VMware vCenter Server 6.0 log files</h1>
         
 
         <div class="post-meta">
@@ -295,8 +295,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-15T22:57:14+08:00">
-                2017-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-04T20:23:56+08:00">
+                2017-09-04
               </time>
             
 
@@ -333,11 +333,101 @@
       
 
       
-        <h2 id="PowerShell’s-match和-like的区别"><a href="#PowerShell’s-match和-like的区别" class="headerlink" title="PowerShell’s -match和-like的区别"></a>PowerShell’s -match和-like的区别</h2><p>-match只要匹配到字符串就可以了，但是-like一定需要全匹配，或者使用通配符进行全匹配，在windows下面大小写并不敏感。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">λ  <span class="variable">$Person</span> =<span class="string">"Guy Thomas 1949"</span></div><div class="line">λ  <span class="variable">$Person</span> <span class="nomarkup">-match</span> <span class="string">"th*"</span></div><div class="line">True</div><div class="line">λ  <span class="variable">$Person</span> <span class="nomarkup">-like</span> <span class="string">"th*"</span></div><div class="line">False</div><div class="line">λ  <span class="variable">$Person</span> <span class="nomarkup">-like</span> <span class="string">"*th*"</span></div><div class="line">True</div><div class="line">C:\Users\fei</div><div class="line">λ</div></pre></td></tr></table></figure>
-<h2 id="Matches变量的使用"><a href="#Matches变量的使用" class="headerlink" title="$Matches变量的使用"></a>$Matches变量的使用</h2><p>先看这个列子</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">λ  <span class="variable">$string</span> = <span class="string">"abc123abc"</span></div><div class="line">λ  <span class="variable">$pattern</span> = <span class="string">"(\d&#123;3&#125;)"</span></div><div class="line">λ  <span class="variable">$string</span> <span class="nomarkup">-match</span> <span class="variable">$pattern</span></div><div class="line">True</div><div class="line">λ  <span class="variable">$Matches</span></div><div class="line"></div><div class="line">Name                           Value</div><div class="line">----                           -----</div><div class="line"><span class="number">1</span>                              <span class="number">123</span></div><div class="line"><span class="number">0</span>                              <span class="number">123</span></div><div class="line"></div><div class="line">λ  <span class="variable">$pattern2</span> = <span class="string">"abc(\d&#123;3&#125;)"</span></div><div class="line">λ  <span class="variable">$string</span> <span class="nomarkup">-match</span> <span class="variable">$pattern2</span></div><div class="line">True</div><div class="line">λ  <span class="variable">$Matches</span></div><div class="line"></div><div class="line">Name                           Value</div><div class="line">----                           -----</div><div class="line"><span class="number">1</span>                              <span class="number">123</span></div><div class="line"><span class="number">0</span>                              abc123</div></pre></td></tr></table></figure>
-<p><code>$Matches[0]</code>表示的是与正则表达式相匹配的内容，而<code>$Matches[1]</code>则对应着第一个小括号内的内容，我们这个例子只有一个小括号，如果有多个，就可以匹配多个<code>$Matches</code>的元素</p>
+        <p>##Location of VMware vCenter Server 6.0 log files (2110014)</p>
+<p>The VMware vCenter Server 6.0 logs are located in the <code>%ALLUSERSPROFILE%\VMWare\vCenterServer\logs</code> folder.</p>
+<p>The VMware vCenter Server Appliance 6.0 logs are located in the <code>/var/log/vmware/</code> folder.</p>
+<p>vCenter Server logs are grouped by component and purpose in these sub-directories:</p>
+<table>
+<thead>
+<tr>
+<th><strong>vCenter Server</strong></th>
+<th><strong>vCenter Server Appliance</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vmware-vpx\vpxd.log</td>
+<td>vpxd/vpxd.log</td>
+<td>The main vCenter Serverlog</td>
+</tr>
+<tr>
+<td>vmware-vpx\vpxd-profiler.log</td>
+<td>vpxd/vpxd-profiler.log</td>
+<td>Profile metrics for operations performed in vCenter Server</td>
+</tr>
+<tr>
+<td>vmware-vpx\vpxd-alert.log</td>
+<td>vpxd/vpxd-alert.log</td>
+<td>Non-fatal information logged about the vpxd process</td>
+</tr>
+<tr>
+<td>perfcharts\stats.log</td>
+<td>perfcharts/stats.log</td>
+<td>VMware Performance Charts</td>
+</tr>
+<tr>
+<td>eam\eam.log</td>
+<td>eam/eam.log</td>
+<td>VMware ESX Agent Manager</td>
+</tr>
+<tr>
+<td>invsvc</td>
+<td>invsvc</td>
+<td>VMware Inventory Service</td>
+</tr>
+<tr>
+<td>netdump</td>
+<td>netdumper</td>
+<td>VMware vSphere ESXi Dump Collector</td>
+</tr>
+<tr>
+<td>vapi</td>
+<td>vapi</td>
+<td>VMware vAPI Endpoint</td>
+</tr>
+<tr>
+<td>vmdird</td>
+<td>vmdird</td>
+<td>VMware Directory Service daemon</td>
+</tr>
+<tr>
+<td>vmsyslogcollector</td>
+<td>syslog</td>
+<td>vSphere Syslog Collector</td>
+</tr>
+<tr>
+<td>vmware-sps\sps.log</td>
+<td>vmware-sps/sps.log</td>
+<td>VMware vSphere Profile-Driven Storage Service</td>
+</tr>
+<tr>
+<td>vpostgres</td>
+<td>vpostgres</td>
+<td>vFabric Postgres database service</td>
+</tr>
+<tr>
+<td>vsphere-client</td>
+<td>vsphere-client</td>
+<td>VMware vSphere Web Client</td>
+</tr>
+<tr>
+<td>vws</td>
+<td>vws</td>
+<td>VMware System and Hardware Health Manager</td>
+</tr>
+<tr>
+<td>workflow</td>
+<td>workflow</td>
+<td>VMware vCenter Workflow Manager</td>
+</tr>
+<tr>
+<td>SSO</td>
+<td>SSO</td>
+<td>VMware Single Sign-On</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -355,7 +445,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PowerShell/" rel="tag"># PowerShell</a>
+            <a href="/tags/VMware/" rel="tag"># VMware</a>
           
         </div>
       
@@ -368,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/03/Hexo安装的坑/" rel="next" title="hexo安装的坑">
-                <i class="fa fa-chevron-left"></i> hexo安装的坑
+              <a href="/2017/09/02/英语学习1/" rel="next" title="英语学习1">
+                <i class="fa fa-chevron-left"></i> 英语学习1
               </a>
             
           </div>
@@ -377,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/19/2017-08-19-Flask简介/" rel="prev" title="Flask简介">
-                Flask简介 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -432,17 +518,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -495,22 +572,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerShell’s-match和-like的区别"><span class="nav-number">1.</span> <span class="nav-text">PowerShell’s -match和-like的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matches变量的使用"><span class="nav-number">2.</span> <span class="nav-text">$Matches变量的使用</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
